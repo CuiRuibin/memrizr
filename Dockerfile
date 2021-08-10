@@ -4,6 +4,7 @@ WORKDIR /go/src/app
 
 # Get Reflex for live reload in dev
 ENV GO111MODULE=on
+RUN go env -w GOPROXY="https://goproxy.cn,direct"
 RUN go get github.com/cespare/reflex
 
 COPY go.mod .
